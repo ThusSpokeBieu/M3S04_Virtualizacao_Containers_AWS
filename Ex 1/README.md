@@ -12,5 +12,5 @@ docker run hello-world
 
 Imagem da execução:
 
-<img title="Execução do comando" alt="execução do comando" src=".docker-hello-world.png">
+<img title="Execução do comando" alt="execução do comando" src="./docker-hello-world.png">
 
