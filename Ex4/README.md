@@ -2,7 +2,7 @@
 
 ## Valide a sua instância MySQL rodando em docker
 
-1. [Instale o MySQL CLI e Conecte-se a sua instância rodando no docker localmente](#1.-instale-o-mysql-cli-e-conecte-se-à-sua-instância-rodando-no-docker-localmente)
+1. [Instale o MySQL CLI e Conecte-se a sua instância rodando no docker localmente](#1-instale-o-mysql-cli-e-conecte-se-à-sua-instância-rodando-no-docker-localmente)
 2. Crie uma database
 3. Crie uma nova table
 4. Insira um novo registro
