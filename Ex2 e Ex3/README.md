@@ -1,8 +1,9 @@
-# [M3S04] Ex2
+# [M3S04] Ex2 e Ex3
 
-## Faça o pull da imagem docker oficial do banco relacional MySQL
+## Ex 2 - Faça o pull da imagem docker oficial do banco relacional MySQL
+## Ex 3 - Execute sua imagem docker MySQL 
 
-Fiz o pull e a instanciação através de um docker compose.
+Fiz o pull e a instanciação através de um docker compose, por isso resolve ambos exercícios.
 
 Seguinto o seguinte arquivo no docker-compose.yml:
 
