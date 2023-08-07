@@ -13,17 +13,24 @@ Criaremos primeiro o docker file para a containerização:
 # Fazendo o runtime com a base da imagem preview do aspnet.
 FROM mcr.microsoft.com/dotnet/nightly/aspnet:8.0-preview AS base
 WORKDIR /app
-EXPOSE 80 # expondo a porta 80
-EXPOSE 443 # expondo a porta 443
+EXPOSE 80 
+# expondo a porta 80
+EXPOSE 443 
+# expondo a porta 443
 
 # Utilizando a SDK para buildar a aplicação, através da imagem preview 
 FROM mcr.microsoft.com/dotnet/nightly/sdk:8.0-preview AS build
 WORKDIR /src
-COPY ["ex5/ex5.csproj", "ex5/"] # copiando a pasta ex5 para a pasta ex5/
-RUN dotnet restore "ex5/ex5.csproj" # baixando as dependencias do projeto
+COPY ["ex5/ex5.csproj", "ex5/"] 
+# copiando a pasta ex5 para a pasta ex5/
+
+RUN dotnet restore "ex5/ex5.csproj" 
+# baixando as dependencias do projeto
+
 COPY . .
 WORKDIR "/src/ex5" 
-RUN dotnet build "ex5.csproj" -c Release -o /app/build # fazendo a release do projeto
+RUN dotnet build "ex5.csproj" -c Release -o /app/build 
+# fazendo a release do projeto
 
 FROM build AS publish
 RUN dotnet publish "ex5.csproj" -c Release -o /app/publish /p:UseAppHost=false
@@ -31,7 +38,8 @@ RUN dotnet publish "ex5.csproj" -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ex5.dll"] ## iniciando a aplicação já publicada
+ENTRYPOINT ["dotnet", "ex5.dll"] 
+# iniciando a aplicação já publicada
 
 ```
 
@@ -64,7 +72,7 @@ Para testar a aplicação, podemos acessar a porta: http://localhost/weatherfore
 
 Usarei o nushell para verificar se retorna corretamente:
 
-```nu
+```nushell
 http get http://localhost/weatherforecast
 ```
 
